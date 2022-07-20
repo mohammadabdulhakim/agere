@@ -119,6 +119,7 @@ const Agere = {
         for(let i=0;i<test.length;i++){
             array.push(test[i])
         }
+        return array
         },
     //////////////[ end of random arrayelements ]///////////////
     
