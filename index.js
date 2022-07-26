@@ -1,7 +1,7 @@
 const Agere = {
 
     //>>>>>>>>>[ TYPING EFFECT ]<<<<<<<<<<<//
-    /*>>>>>>>>>>  THIS FUNCTION TAKED 2 DAYS!! <<<<<<<<<<<<<<<<*/
+    /*>>>>>>>>>>  THIS FUNCTION TAKED 2 DAYS!! (only to create the first update) <<<<<<<<<<<<<<<<*/
         reTypingPage:function(arrayWithTextsLocations,timeBetweenTypingLetters,marker){
         let reloaded;
         if(sessionStorage.reloaded != null && sessionStorage.reloaded != ''){
@@ -98,29 +98,99 @@ const Agere = {
     //>>>>>>>>>[ END OF TYPING EFFECT ]<<<<<<<<<<<//
     
     
-    //////////////[ random arrayelements ]///////////////
-    /*>>>>>>>>>> THIS FUNCTION TAKED WHOLE DAY!! <<<<<<<<<<<<<<<<*/
-        randomArrayElements:function(array){
-        let randomNumbers = [];
-        let test = [];
-        for(let i=0;i<array.length;i++){
-            let randomNumber = Math.floor(Math.random() * array.length)
-            for(i=0;i<2000000;i++){
-                if(randomNumbers.includes(randomNumber)){
-                    randomNumber = Math.floor(Math.random() * array.length)
-                }else{
-                    randomNumbers.push(randomNumber)
-                    test.push(array[randomNumber])
-                    break
+    //////////////[ random array elements ]///////////////
+    /*>>>>>>>>>> THIS FUNCTION TAKED WHOLE DAY!! (only to create the first update) <<<<<<<<<<<<<<<<*/
+         randomArrayElements:{
+            everyReload:function(array){
+                let randomNumbers = [];
+                let test = [];
+                for(let i=0;i<array.length;i++){
+                    let randomNumber = Math.floor(Math.random() * array.length)
+                    for(i=0;i<2000000;i++){
+                        if(randomNumbers.includes(randomNumber)){
+                            randomNumber = Math.floor(Math.random() * array.length)
+                        }else{
+                            randomNumbers.push(randomNumber)
+                            test.push(array[randomNumber])
+                            break
+                        }
+                    }
                 }
-            }
-        }
-        array.splice(0,array.length)
-        for(let i=0;i<test.length;i++){
-            array.push(test[i])
-        }
-        return array
+                array.splice(0,array.length)
+                for(let i=0;i<test.length;i++){
+                    array.push(test[i])
+                }
+                return array
+                },
+          
+            everyOpen:function(array,arrayId){
+                if(sessionStorage.getItem(arrayId) !== '' && sessionStorage.getItem(arrayId) !== null && sessionStorage.getItem(arrayId) !== undefined && sessionStorage.getItem(arrayId) !== NaN ){
+                  
+                  array = JSON.parse(sessionStorage.getItem(arrayId))
+                  return array
+                }else{
+                    sessionStorage.removeItem(arrayId)
+          
+                    let randomNumbers = [];
+                    let test = [];
+                    for(let i=0;i<array.length;i++){
+                        let randomNumber = Math.floor(Math.random() * array.length)
+                        for(i=0;i<2000000;i++){
+                            if(randomNumbers.includes(randomNumber)){
+                                randomNumber = Math.floor(Math.random() * array.length)
+                            }else{
+                                randomNumbers.push(randomNumber)
+                                test.push(array[randomNumber])
+                                break
+                            }
+                        }
+                    }
+                    array.splice(0,array.length)
+                    for(let i=0;i<test.length;i++){
+                        array.push(test[i])
+                    }
+          
+                    sessionStorage.setItem(arrayId , JSON.stringify(array))
+          
+                    array = JSON.parse(sessionStorage.getItem(arrayId))
+                    return array
+                    }
+                },
+          
+            oneTime:function(array,arrayId){
+                if(localStorage.getItem(arrayId) !== '' && localStorage.getItem(arrayId) !== null && localStorage.getItem(arrayId) !== undefined && localStorage.getItem(arrayId) !== NaN ){
+          
+                    array = JSON.parse(localStorage.getItem(arrayId))
+                    return array
+                }else{
+                    localStorage.removeItem(arrayId)
+          
+                    let randomNumbers = [];
+                    let test = [];
+                    for(let i=0;i<array.length;i++){
+                        let randomNumber = Math.floor(Math.random() * array.length)
+                        for(i=0;i<2000000;i++){
+                            if(randomNumbers.includes(randomNumber)){
+                                randomNumber = Math.floor(Math.random() * array.length)
+                            }else{
+                                randomNumbers.push(randomNumber)
+                                test.push(array[randomNumber])
+                                break
+                            }
+                        }
+                    }
+                    array.splice(0,array.length)
+                    for(let i=0;i<test.length;i++){
+                        array.push(test[i])
+                    }
+                    localStorage.setItem(arrayId , JSON.stringify(array))
+          
+                    array = JSON.parse(localStorage.getItem(arrayId))
+                    return array
+                    }
+                },
         },
+        
     //////////////[ end of random arrayelements ]///////////////
     
     
@@ -181,9 +251,13 @@ const Agere = {
             }
             return `Good ${timeOfDay} , ${name[0].toUpperCase()+name.slice(1,name.length)}!`
         },
+
+
         capitalize:function(name){
             return name[0].toUpperCase()+name.slice(1,name.length)
         },
+
+
         makeRandomColor:function(){
         let material ="1234567890ABCDEF"
         let colorParts = [];
@@ -193,13 +267,17 @@ const Agere = {
         let finalColor = `#${colorParts.join('')}`
         return(finalColor)
         },
+
+
         errorMessage:function(message,idOfelementBeforeErrorMessage,fontSize){
             let errorMessage = document.createElement('p')
             errorMessage.style=`color:red;letter-spacing:1.5px;font-size:${fontSize}`
             errorMessage.textContent= message
             document.getElementsByTagName(idOfelementBeforeErrorMessage).after(errorMessage)
         },
-        tillNewYearCounter:function(secondsId, minutesId ,hoursId,daysId,newYear){
+
+
+        tillNewYearCounter:function(secondsId, minutesId ,hoursId ,daysId ,newYear){
             let endDate = new Date(`Dec 31, ${newYear - 1} 23:59:59`).getTime()
             
             let seconds =document.getElementById(secondsId)
@@ -223,6 +301,8 @@ const Agere = {
                 
             }, 1000);
         },
+
+
         countTimeSpentAtSite:function(secondsId,startSeconds, minutesId ,startMinutes,hoursId,startHours,daysId,startdays,yearsId,startYears){
             let seconds =document.getElementById(secondsId)
             let minutes =document.getElementById(minutesId)
@@ -297,6 +377,8 @@ const Agere = {
         
             }, 1000);
         },
+
+
         addActiveClass:function(buttonsArray){
             buttonsArray.forEach((btn) => {
                 btn.addEventListener('click' , (e)=>{
@@ -307,6 +389,8 @@ const Agere = {
                 })
             })
         },
+
+
         generatePassword:function(lettersCount){
             let passwordfinal = '';
             let lettersarray = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"
@@ -365,6 +449,8 @@ const Agere = {
                 }
             })
         },
+
+
         // ityped: function(textLocation,textsArray,timeBetweenTypingEachLetter,showCursor){
         //     const text = document.querySelector(textLocation)
         //     let i = 0;
@@ -388,7 +474,105 @@ const Agere = {
         //     },time)
         // }
     }
-    
-    
-    
+
 export default Agere;
+
+
+
+
+
+
+// single exports
+
+export const randomArrayElements= {
+
+    everyReload:function(array){
+        let randomNumbers = [];
+        let test = [];
+        for(let i=0;i<array.length;i++){
+            let randomNumber = Math.floor(Math.random() * array.length)
+            for(i=0;i<2000000;i++){
+                if(randomNumbers.includes(randomNumber)){
+                    randomNumber = Math.floor(Math.random() * array.length)
+                }else{
+                    randomNumbers.push(randomNumber)
+                    test.push(array[randomNumber])
+                    break
+                }
+            }
+        }
+        array.splice(0,array.length)
+        for(let i=0;i<test.length;i++){
+            array.push(test[i])
+        }
+        return array
+        },
+  
+    everyOpen:function(array,arrayId){
+        if(sessionStorage.getItem(arrayId) !== '' && sessionStorage.getItem(arrayId) !== null && sessionStorage.getItem(arrayId) !== undefined && sessionStorage.getItem(arrayId) !== NaN ){
+          
+          array = JSON.parse(sessionStorage.getItem(arrayId))
+          return array
+        }else{
+            sessionStorage.removeItem(arrayId)
+  
+            let randomNumbers = [];
+            let test = [];
+            for(let i=0;i<array.length;i++){
+                let randomNumber = Math.floor(Math.random() * array.length)
+                for(i=0;i<2000000;i++){
+                    if(randomNumbers.includes(randomNumber)){
+                        randomNumber = Math.floor(Math.random() * array.length)
+                    }else{
+                        randomNumbers.push(randomNumber)
+                        test.push(array[randomNumber])
+                        break
+                    }
+                }
+            }
+            array.splice(0,array.length)
+            for(let i=0;i<test.length;i++){
+                array.push(test[i])
+            }
+  
+            sessionStorage.setItem(arrayId , JSON.stringify(array))
+  
+            array = JSON.parse(sessionStorage.getItem(arrayId))
+            return array
+            }
+        },
+  
+    oneTime:function(array,arrayId){
+        if(localStorage.getItem(arrayId) !== '' && localStorage.getItem(arrayId) !== null && localStorage.getItem(arrayId) !== undefined && localStorage.getItem(arrayId) !== NaN ){
+  
+            array = JSON.parse(localStorage.getItem(arrayId))
+            return array
+        }else{
+            localStorage.removeItem(arrayId)
+  
+            let randomNumbers = [];
+            let test = [];
+            for(let i=0;i<array.length;i++){
+                let randomNumber = Math.floor(Math.random() * array.length)
+                for(i=0;i<2000000;i++){
+                    if(randomNumbers.includes(randomNumber)){
+                        randomNumber = Math.floor(Math.random() * array.length)
+                    }else{
+                        randomNumbers.push(randomNumber)
+                        test.push(array[randomNumber])
+                        break
+                    }
+                }
+            }
+            array.splice(0,array.length)
+            for(let i=0;i<test.length;i++){
+                array.push(test[i])
+            }
+            localStorage.setItem(arrayId , JSON.stringify(array))
+  
+            array = JSON.parse(localStorage.getItem(arrayId))
+            return array
+            }
+        },
+  }
+  
