@@ -2,6 +2,7 @@
 
    # _____ بسم الله الرحمن الرحيم _____#            
 
+        # npm i agere
 
 
 Random Elements of any array        [Agere.randomArrayElements.any()]        (with) => {Agere}
