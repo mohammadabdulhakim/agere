@@ -2,6 +2,7 @@
 
    # `_ بسم الله الرحمن الرحيم _`  
 
+#### For download
         npm i agere
 
 
