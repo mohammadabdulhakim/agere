@@ -25,7 +25,7 @@ const Agere = {
 
         if (JSON.parse(sessionStorage.reloaded) === false) {
             // let innerHTMLCopy = [];
-            // for(i=0;i<arrayWithTextsLocations.length;i++){
+            // for(i=0;i<arrayWithTextsLocations?.length;i++){
             //     let eleLocation = document.querySelector(arrayWithTextsLocations[i])
             //     innerHTMLCopy.push(eleLocation.innerHTML)
             // }
@@ -33,7 +33,7 @@ const Agere = {
 
             let lastTime;
             let textsArray = []
-            for (let i = 0; i < arrayWithTextsLocations.length; i++) {
+            for (let i = 0; i < arrayWithTextsLocations?.length; i++) {
                 let eleLocation = document.querySelector(arrayWithTextsLocations[i])
                 let ele = eleLocation.textContent
                 textsArray.push(ele)
@@ -41,12 +41,12 @@ const Agere = {
             }
             let m = 0;
             let itIsFirstLoop = true;
-            for (let i = 0; i < textsArray.length; i++) {
+            for (let i = 0; i < textsArray?.length; i++) {
                 if (itIsFirstLoop) {
                     lastTime = 100
                     itIsFirstLoop = false
                 } else {
-                    lastTime += textsArray[i - 1].length * timeBetweenTypingLetters
+                    lastTime += textsArray[i - 1]?.length * timeBetweenTypingLetters
                 }
                 let text = textsArray[i]
                 let eleLocation = document.querySelector(arrayWithTextsLocations[i])
@@ -78,21 +78,21 @@ const Agere = {
                     let eleTime = setInterval(() => {
                         eleLocation.textContent += text[l]
                         l = l + 1
-                        if (l === text.length) {
+                        if (l === text?.length) {
                             clearInterval(eleTime)
                         }
                     }, timeBetweenTypingLetters);
                 }, lastTime);
             }
             // setTimeout(()=>{
-            //     for(i=0;i<arrayWithTextsLocations.length;i++){
+            //     for(i=0;i<arrayWithTextsLocations?.length;i++){
             //         let eleLocation = document.querySelector(arrayWithTextsLocations[i])
             //         eleLocation.innerHTML = innerHTMLCopy[i]
             //     }
             // }, lastTime)
             setTimeout(() => {
                 window.location.reload()
-            }, lastTime + (textsArray[textsArray.length - 1].length * timeBetweenTypingLetters))
+            }, lastTime + (textsArray[textsArray?.length - 1]?.length * timeBetweenTypingLetters))
         }
     },
     //>>>>>>>>>[ END OF TYPING EFFECT ]<<<<<<<<<<<//
@@ -104,11 +104,11 @@ const Agere = {
         everyReload: function (array) {
             let randomNumbers = [];
             let test = [];
-            for (let i = 0; i < array.length; i++) {
-                let randomNumber = Math.floor(Math.random() * array.length)
+            for (let i = 0; i < array?.length; i++) {
+                let randomNumber = Math.floor(Math.random() * array?.length)
                 for (i = 0; i < 2000000; i++) {
                     if (randomNumbers.includes(randomNumber)) {
-                        randomNumber = Math.floor(Math.random() * array.length)
+                        randomNumber = Math.floor(Math.random() * array?.length)
                     } else {
                         randomNumbers.push(randomNumber)
                         test.push(array[randomNumber])
@@ -116,12 +116,12 @@ const Agere = {
                     }
                 }
             }
-            while (array.length !== test.length) {
-                for (let i = 0; i < array.length; i++) {
-                    let randomNumber = Math.floor(Math.random() * array.length)
+            while (array?.length !== test?.length) {
+                for (let i = 0; i < array?.length; i++) {
+                    let randomNumber = Math.floor(Math.random() * array?.length)
                     for (i = 0; i < 2000000; i++) {
                         if (randomNumbers.includes(randomNumber)) {
-                            randomNumber = Math.floor(Math.random() * array.length)
+                            randomNumber = Math.floor(Math.random() * array?.length)
                         } else {
                             randomNumbers.push(randomNumber)
                             test.push(array[randomNumber])
@@ -130,8 +130,8 @@ const Agere = {
                     }
                 }
             }
-            array.splice(0, array.length)
-            for (let i = 0; i < test.length; i++) {
+            array.splice(0, array?.length)
+            for (let i = 0; i < test?.length; i++) {
                 array.push(test[i])
             }
             return array
@@ -147,11 +147,11 @@ const Agere = {
 
                 let randomNumbers = [];
                 let test = [];
-                for (let i = 0; i < array.length; i++) {
-                    let randomNumber = Math.floor(Math.random() * array.length)
+                for (let i = 0; i < array?.length; i++) {
+                    let randomNumber = Math.floor(Math.random() * array?.length)
                     for (i = 0; i < 2000000; i++) {
                         if (randomNumbers.includes(randomNumber)) {
-                            randomNumber = Math.floor(Math.random() * array.length)
+                            randomNumber = Math.floor(Math.random() * array?.length)
                         } else {
                             randomNumbers.push(randomNumber)
                             test.push(array[randomNumber])
@@ -159,12 +159,12 @@ const Agere = {
                         }
                     }
                 }
-                while (array.length !== test.length) {
-                    for (let i = 0; i < array.length; i++) {
-                        let randomNumber = Math.floor(Math.random() * array.length)
+                while (array?.length !== test?.length) {
+                    for (let i = 0; i < array?.length; i++) {
+                        let randomNumber = Math.floor(Math.random() * array?.length)
                         for (i = 0; i < 2000000; i++) {
                             if (randomNumbers.includes(randomNumber)) {
-                                randomNumber = Math.floor(Math.random() * array.length)
+                                randomNumber = Math.floor(Math.random() * array?.length)
                             } else {
                                 randomNumbers.push(randomNumber)
                                 test.push(array[randomNumber])
@@ -173,8 +173,8 @@ const Agere = {
                         }
                     }
                 }
-                array.splice(0, array.length)
-                for (let i = 0; i < test.length; i++) {
+                array.splice(0, array?.length)
+                for (let i = 0; i < test?.length; i++) {
                     array.push(test[i])
                 }
 
@@ -195,11 +195,11 @@ const Agere = {
 
                 let randomNumbers = [];
                 let test = [];
-                for (let i = 0; i < array.length; i++) {
-                    let randomNumber = Math.floor(Math.random() * array.length)
+                for (let i = 0; i < array?.length; i++) {
+                    let randomNumber = Math.floor(Math.random() * array?.length)
                     for (i = 0; i < 2000000; i++) {
                         if (randomNumbers.includes(randomNumber)) {
-                            randomNumber = Math.floor(Math.random() * array.length)
+                            randomNumber = Math.floor(Math.random() * array?.length)
                         } else {
                             randomNumbers.push(randomNumber)
                             test.push(array[randomNumber])
@@ -207,12 +207,12 @@ const Agere = {
                         }
                     }
                 }
-                while (array.length !== test.length) {
-                    for (let i = 0; i < array.length; i++) {
-                        let randomNumber = Math.floor(Math.random() * array.length)
+                while (array?.length !== test?.length) {
+                    for (let i = 0; i < array?.length; i++) {
+                        let randomNumber = Math.floor(Math.random() * array?.length)
                         for (i = 0; i < 2000000; i++) {
                             if (randomNumbers.includes(randomNumber)) {
-                                randomNumber = Math.floor(Math.random() * array.length)
+                                randomNumber = Math.floor(Math.random() * array?.length)
                             } else {
                                 randomNumbers.push(randomNumber)
                                 test.push(array[randomNumber])
@@ -221,8 +221,8 @@ const Agere = {
                         }
                     }
                 }
-                array.splice(0, array.length)
-                for (let i = 0; i < test.length; i++) {
+                array.splice(0, array?.length)
+                for (let i = 0; i < test?.length; i++) {
                     array.push(test[i])
                 }
                 localStorage.setItem(arrayId, JSON.stringify(array))
@@ -245,7 +245,7 @@ const Agere = {
         let myNameTime = setInterval(() => {
             locName.textContent += myName[i]
             i = i + 1
-            if (i === myName.length) {
+            if (i === myName?.length) {
                 clearInterval(myNameTime)
             }
         }, duration);
@@ -291,12 +291,12 @@ const Agere = {
         } else {
             timeOfDay = "night"
         }
-        return `Good ${timeOfDay} , ${name[0].toUpperCase() + name.slice(1, name.length)}!`
+        return `Good ${timeOfDay} , ${name[0].toUpperCase() + name.slice(1, name?.length)}!`
     },
 
 
     capitalize: function (name) {
-        return name[0].toUpperCase() + name.slice(1, name.length)
+        return name[0].toUpperCase() + name.slice(1, name?.length)
     },
 
 
@@ -304,7 +304,7 @@ const Agere = {
         let material = "1234567890ABCDEF"
         let colorParts = [];
         for (let i = 0; i < 6; i++) {
-            colorParts.push(material[Math.floor(Math.random() * material.length)])
+            colorParts.push(material[Math.floor(Math.random() * material?.length)])
         }
         let finalColor = `#${colorParts.join('')}`
         return (finalColor)
@@ -438,7 +438,7 @@ const Agere = {
         let lettersarray = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"
         let passnum = lettersCount
         for (let i = 0; i < +passnum; i++) {
-            passwordfinal += lettersarray[Math.floor(Math.random() * lettersarray.length)]
+            passwordfinal += lettersarray[Math.floor(Math.random() * lettersarray?.length)]
         }
         return (passwordfinal)
     },
@@ -476,14 +476,14 @@ const Agere = {
         let count;
         if (haveNumbersCounter) {
             count = document.querySelector(locationOfNumbersCounter)
-            count.textContent = +maxlength.value - input.value.length
+            count.textContent = +maxlength.value - input.value?.length
         }
         //  END OF ADDING ATTRIBUTES
 
         input.addEventListener('keyup',
             () => {
-                progress.style.width = `${(100 / maxlength.value) * input.value.length}%`
-                count.textContent = maxlength.value - input.value.length
+                progress.style.width = `${(100 / maxlength.value) * input.value?.length}%`
+                count.textContent = maxlength.value - input.value?.length
                 if (count.textContent === 0) {
                     count.setAttributeNode(zeroStyle)
                 } else {
@@ -503,7 +503,7 @@ const Agere = {
     //             time = 100;
     //             itIsFirstLoop=false
     //         }else{
-    //             time += (timeBetweenTypingEachLetter * textsArray[i-1].length)
+    //             time += (timeBetweenTypingEachLetter * textsArray[i-1]?.length)
     //         }
     //         let k=0
     //         setInterval(()=>{
@@ -531,11 +531,11 @@ export const randomArrayElements = {
     everyReload: function (array) {
         let randomNumbers = [];
         let test = [];
-        for (let i = 0; i < array.length; i++) {
-            let randomNumber = Math.floor(Math.random() * array.length)
+        for (let i = 0; i < array?.length; i++) {
+            let randomNumber = Math.floor(Math.random() * array?.length)
             for (i = 0; i < 2000000; i++) {
                 if (randomNumbers.includes(randomNumber)) {
-                    randomNumber = Math.floor(Math.random() * array.length)
+                    randomNumber = Math.floor(Math.random() * array?.length)
                 } else {
                     randomNumbers.push(randomNumber)
                     test.push(array[randomNumber])
@@ -543,8 +543,22 @@ export const randomArrayElements = {
                 }
             }
         }
-        array.splice(0, array.length)
-        for (let i = 0; i < test.length; i++) {
+        while (array?.length !== test?.length) {
+            for (let i = 0; i < array?.length; i++) {
+                let randomNumber = Math.floor(Math.random() * array?.length)
+                for (i = 0; i < 2000000; i++) {
+                    if (randomNumbers.includes(randomNumber)) {
+                        randomNumber = Math.floor(Math.random() * array?.length)
+                    } else {
+                        randomNumbers.push(randomNumber)
+                        test.push(array[randomNumber])
+                        break
+                    }
+                }
+            }
+        }
+        array.splice(0, array?.length)
+        for (let i = 0; i < test?.length; i++) {
             array.push(test[i])
         }
         return array
@@ -560,11 +574,11 @@ export const randomArrayElements = {
 
             let randomNumbers = [];
             let test = [];
-            for (let i = 0; i < array.length; i++) {
-                let randomNumber = Math.floor(Math.random() * array.length)
+            for (let i = 0; i < array?.length; i++) {
+                let randomNumber = Math.floor(Math.random() * array?.length)
                 for (i = 0; i < 2000000; i++) {
                     if (randomNumbers.includes(randomNumber)) {
-                        randomNumber = Math.floor(Math.random() * array.length)
+                        randomNumber = Math.floor(Math.random() * array?.length)
                     } else {
                         randomNumbers.push(randomNumber)
                         test.push(array[randomNumber])
@@ -572,8 +586,22 @@ export const randomArrayElements = {
                     }
                 }
             }
-            array.splice(0, array.length)
-            for (let i = 0; i < test.length; i++) {
+            while (array?.length !== test?.length) {
+                for (let i = 0; i < array?.length; i++) {
+                    let randomNumber = Math.floor(Math.random() * array?.length)
+                    for (i = 0; i < 2000000; i++) {
+                        if (randomNumbers.includes(randomNumber)) {
+                            randomNumber = Math.floor(Math.random() * array?.length)
+                        } else {
+                            randomNumbers.push(randomNumber)
+                            test.push(array[randomNumber])
+                            break
+                        }
+                    }
+                }
+            }
+            array.splice(0, array?.length)
+            for (let i = 0; i < test?.length; i++) {
                 array.push(test[i])
             }
 
@@ -594,11 +622,11 @@ export const randomArrayElements = {
 
             let randomNumbers = [];
             let test = [];
-            for (let i = 0; i < array.length; i++) {
-                let randomNumber = Math.floor(Math.random() * array.length)
+            for (let i = 0; i < array?.length; i++) {
+                let randomNumber = Math.floor(Math.random() * array?.length)
                 for (i = 0; i < 2000000; i++) {
                     if (randomNumbers.includes(randomNumber)) {
-                        randomNumber = Math.floor(Math.random() * array.length)
+                        randomNumber = Math.floor(Math.random() * array?.length)
                     } else {
                         randomNumbers.push(randomNumber)
                         test.push(array[randomNumber])
@@ -606,8 +634,22 @@ export const randomArrayElements = {
                     }
                 }
             }
-            array.splice(0, array.length)
-            for (let i = 0; i < test.length; i++) {
+            while (array?.length !== test?.length) {
+                for (let i = 0; i < array?.length; i++) {
+                    let randomNumber = Math.floor(Math.random() * array?.length)
+                    for (i = 0; i < 2000000; i++) {
+                        if (randomNumbers.includes(randomNumber)) {
+                            randomNumber = Math.floor(Math.random() * array?.length)
+                        } else {
+                            randomNumbers.push(randomNumber)
+                            test.push(array[randomNumber])
+                            break
+                        }
+                    }
+                }
+            }
+            array.splice(0, array?.length)
+            for (let i = 0; i < test?.length; i++) {
                 array.push(test[i])
             }
             localStorage.setItem(arrayId, JSON.stringify(array))
