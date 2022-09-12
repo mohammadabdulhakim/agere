@@ -1,7 +1,7 @@
 {
   "name": "agere",
-  "version": "1.3.0",
-  "description": "codes in one word",
+  "version": "1.4.0",
+  "description": "codes in one 2 words",
   "main": "index.js",
   "scripts": {
     "test": "(https://github.com/duxpixels/agere.git)"
