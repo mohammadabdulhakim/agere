@@ -492,6 +492,20 @@ const Agere = {
             })
     },
 
+    abbText: function (text,maxLength){
+        if(+maxLength === 0){
+          console.error(`Agere : "maxLength" must be at least 1 `)
+        }else if(!(+maxLength/2)){
+          console.error(`Agere : "maxLength" must be number not ${typeof(maxLength)}`)
+        }
+        else if(text?.length<=Math.round(maxLength)){
+          return (text)
+        }else{
+          return(
+            text?.slice(0,Math.round(maxLength)) + "..."
+          )
+        }
+      },
 
     // ityped: function(textLocation,textsArray,timeBetweenTypingEachLetter,showCursor){
     //     const text = document.querySelector(textLocation)

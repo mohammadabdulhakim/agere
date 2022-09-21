@@ -12,6 +12,7 @@ Random Elements of any array        [randomArrayElements.any()]              (wi
 
 Retiping page or group of elements automatically [Agere.reTypingPage()]      (with) => {Agere}
 
+Abbreviate Text                    [Agere.abbText()]        (with) => {Agere}
 
 Add input letters counter                [Agere.addInputLettersCounter()]    (with) => {Agere}
 
