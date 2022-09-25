@@ -492,7 +492,8 @@ const Agere = {
             })
     },
 
-    abbText: function (text,maxLength){
+    abbText: function (text,maxLength,showThatWasRest){
+        let STWR = true
         if(+maxLength === 0){
           console.error(`Agere : "maxLength" must be at least 1 `)
         }else if(!(+maxLength/2)){
@@ -501,8 +502,11 @@ const Agere = {
         else if(text?.length<=Math.round(maxLength)){
           return (text)
         }else{
+            if(typeof(showThatWasRest) === boolean){
+                STWR = showThatWasRest
+            }
           return(
-            text?.slice(0,Math.round(maxLength)) + "..."
+            text?.slice(0,Math.round(maxLength)) + (STWR && "...")
           )
         }
       },
