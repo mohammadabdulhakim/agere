@@ -508,7 +508,7 @@ const Agere = {
           return(
             text?.slice(0,Math.round(maxLength)) + (STWR && "...")
           )
-        }
+        }"parameter"
       },
 
     // ityped: function(textLocation,textsArray,timeBetweenTypingEachLetter,showCursor){
