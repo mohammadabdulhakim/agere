@@ -502,7 +502,7 @@ const Agere = {
         else if(text?.length<=Math.round(maxLength)){
           return (text)
         }else{
-            if(typeof(showThatWasRest) === boolean){
+            if(typeof(showThatWasRest) === "boolean"){
                 STWR = showThatWasRest
             }
           return(
