@@ -506,9 +506,9 @@ const Agere = {
                 STWR = showThatWasRest
             }
           return(
-            text?.slice(0,Math.round(maxLength)) + (STWR && "...")
+            text?.slice(0,Math.round(maxLength)) + (STWR ? "...":"")
           )
-        }"parameter"
+        }
       },
 
     // ityped: function(textLocation,textsArray,timeBetweenTypingEachLetter,showCursor){
