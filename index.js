@@ -510,6 +510,16 @@ const Agere = {
           )
         }
       },
+      
+    pull: function (array,value){
+        const index = array.indexOf(value);
+            if (index > -1) {
+                array.splice(index, 1);
+            }
+          return(
+            array
+          )
+      },
 
     // ityped: function(textLocation,textsArray,timeBetweenTypingEachLetter,showCursor){
     //     const text = document.querySelector(textLocation)
