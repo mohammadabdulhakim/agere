@@ -39,6 +39,8 @@ Generate Passwords or Ids with unlimited word count [Agere.generatePassword()] (
 
 Counter waiting new year                    [Agere.tillNewYearCounter()]       (with) => {Agere}
 
+Pull an element from an array              [Agere.pull(array,value)]       (with) => {Agere}
+
 
 
 
