@@ -1,10 +1,11 @@
-﻿# agere
-
-   # `_ بسم الله الرحمن الرحيم _`  
+﻿# بسم الله الرحمن الرحيم
+## agere
 
 ### Install package
-        npm i agere
+        npm install agere
 
+### CDN
+        <script src="https://unpkg.com/agere@latest/index.js"></script>
 
 Random Elements of any array        [Agere.randomArrayElements.any()]        (with) => {Agere}
 Random Elements of any array        [randomArrayElements.any()]              (with) => {Agere}
