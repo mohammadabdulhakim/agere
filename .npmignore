@@ -2,3 +2,5 @@
 package-lock.json
 test
 dev
+.npmignore
+node_modules
