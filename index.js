@@ -1,6 +1,5 @@
 const randArr = require("./lib/randArr");
 
-
 const agere = {
   randArr,
 };

@@ -4,7 +4,7 @@
   "description": "codes in just 2 words",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write \"dev/*.ts\" \"src/*.js\" \"src/**/*.js\"",
+    "format": "prettier --write \"dev/*.ts\" \"./*.js\" \"./**/*.js\"",
     "lint": "tslint -p dev/tsconfig.json",
     "test": "jest"
   },
