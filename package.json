@@ -1,6 +1,6 @@
 {
   "name": "agere",
-  "version": "1.7",
+  "version": "1.7.0",
   "description": "codes in just 2 words",
   "main": "index.js",
   "scripts": {
