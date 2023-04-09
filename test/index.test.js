@@ -1,4 +1,4 @@
-import {randArr} from "./src/index"
+const {randArr} = require("../index")
 
 
 describe("Agere",()=>{
