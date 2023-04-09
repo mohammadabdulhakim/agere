@@ -17,7 +17,7 @@ describe("Agere", () => {
     expect(pull([1,2,3,4],2)).toStrictEqual([1,3,4]);
   });
   test("abbText", () => {
-    expect(abbText("Hi there, How are you?",13)).toBe("Hi there, How...");
+    expect(abbText("I love agere.",3)).toBe("I l...");
   });
   
 });
