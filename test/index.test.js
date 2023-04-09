@@ -1,4 +1,4 @@
-const { randArr, capitalize, randColor } = require("../index");
+const { randArr, capitalize, randColor, gPass } = require("../index");
 
 describe("Agere", () => {
   test("randArr", () => {
@@ -9,6 +9,9 @@ describe("Agere", () => {
   });
   test("randColor", () => {
     expect(randColor()).toContain("#");
+  });
+  test("gPass", () => {
+    expect(gPass()).toHaveLength(8);
   });
   
 });

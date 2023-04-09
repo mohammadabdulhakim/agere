@@ -150,16 +150,6 @@ const Agerez = {
     }!`;
   },
 
-  makeRandomColor: function () {
-    let material = "1234567890ABCDEF";
-    let colorParts = [];
-    for (let i = 0; i < 6; i++) {
-      colorParts.push(material[Math.floor(Math.random() * material.length)]);
-    }
-    let finalColor = `#${colorParts.join("")}`;
-    return finalColor;
-  },
-
   errorMessage: function (message, idOfelementBeforeErrorMessage, fontSize) {
     let errorMessage = document.createElement("p");
     errorMessage.style = `color:red;letter-spacing:1.5px;font-size:${fontSize}`;
