@@ -1,4 +1,4 @@
-const { randArr, capitalize, randColor, gPass } = require("../index");
+const { randArr, capitalize, randColor, gPass, pull, abbText } = require("../index");
 
 describe("Agere", () => {
   test("randArr", () => {
@@ -12,6 +12,12 @@ describe("Agere", () => {
   });
   test("gPass", () => {
     expect(gPass()).toHaveLength(8);
+  });
+  test("pull", () => {
+    expect(pull([1,2,3,4],2)).toStrictEqual([1,3,4]);
+  });
+  test("abbText", () => {
+    expect(abbText("Hi there, How are you?",13)).toBe("Hi there, How...");
   });
   
 });

@@ -1,19 +1,11 @@
-function gPass (lettersCount: number=8,lowercase:boolean=true,uppercase:boolean=true,numbers:boolean=true,symbols:string="#!%$") {
-  
-  let generateFrom = ""
-
-  if(lowercase) generateFrom+= "qwertyuiopasdfghjklzxcvbnm"
-  if(uppercase) generateFrom+= "QWERTYUIOPASDFGHJKLZXCVBNM"
-  if(numbers) generateFrom+= "1234567890"
-  if(symbols) generateFrom+= symbols
-  
-  let finalPass = ""
-
-  for (let i = 0; i < lettersCount; i++) {
-    finalPass+= generateFrom[Math.floor(Math.random()*generateFrom.length)]
-    
+function abbText (text:string, maxLength:number, showThatWasRest:Boolean=true) {
+  if (text?.length <= Math.round(maxLength)) {
+    return text;
+  } else {
+    return text?.slice(0, Math.round(maxLength)) + (showThatWasRest ? "..." : "");
   }
-  return finalPass;
 }
 
-console.log(gPass(100,true,false,true,"!@!#@$#%$^%*&^*&(()><.,;'/*-+"))
+
+
+console.log(abbText("jmslkamfkalm",10))

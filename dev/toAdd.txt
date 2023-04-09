@@ -309,17 +309,6 @@ const Agerez = {
     });
   },
 
-  generatePassword: function (lettersCount) {
-    let passwordfinal = "";
-    let lettersarray =
-      "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
-    let passnum = lettersCount;
-    for (let i = 0; i < +passnum; i++) {
-      passwordfinal +=
-        lettersarray[Math.floor(Math.random() * lettersarray.length)];
-    }
-    return passwordfinal;
-  },
 
   /*  in this function 
     you have to put the input in a div and set the div width = the input width you want. 
