@@ -1,4 +1,4 @@
-const { randArr, capitalize } = require("../index");
+const { randArr, capitalize, randColor } = require("../index");
 
 describe("Agere", () => {
   test("randArr", () => {
@@ -7,4 +7,8 @@ describe("Agere", () => {
   test("capitalize", () => {
     expect(capitalize("egypt")).toBe("Egypt");
   });
+  test("randColor", () => {
+    expect(randColor()).toContain("#");
+  });
+  
 });

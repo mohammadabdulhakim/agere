@@ -150,10 +150,6 @@ const Agerez = {
     }!`;
   },
 
-  capitalize: function (name) {
-    return name[0].toUpperCase() + name.slice(1, name.length);
-  },
-
   makeRandomColor: function () {
     let material = "1234567890ABCDEF";
     let colorParts = [];
