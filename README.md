@@ -1,4 +1,4 @@
-﻿﻿# بسم الله الرحمن الرحيم
+﻿# بسم الله الرحمن الرحيم
 ## agere
 
 [![NPM version][npm-version-img]][npm-url]
@@ -14,7 +14,7 @@
 ### CDN
         <script src="https://unpkg.com/agere@latest/index.js"></script>
 ---
-### Random array elements
+### Randomize array elements
 ```javascript
 import {randArr} from "agere";
 
