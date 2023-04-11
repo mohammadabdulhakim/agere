@@ -1,6 +1,6 @@
 {
   "name": "agere",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "description": "codes in just 2 words",
   "main": "index.js",
   "scripts": {
@@ -30,11 +30,10 @@
     "agere": "^1.5.6",
     "babel-jest": "^29.5.0"
   },
-  
-"files": [
-  "index.js",
-  "lib/*",
-  "package.json",
-  "README.md"
-]
+  "files": [
+    "index.js",
+    "lib/*",
+    "package.json",
+    "README.md"
+  ]
 }
