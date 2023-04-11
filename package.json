@@ -30,7 +30,11 @@
     "agere": "^1.5.6",
     "babel-jest": "^29.5.0"
   },
-  "files": [
-    "index.js","lib/*","package.json","README.md"
-  ]
+  
+"files": [
+  "index.js",
+  "lib/*",
+  "package.json",
+  "README.md"
+]
 }

@@ -1,5 +1,4 @@
 .gitignore
-package-lock.json
 test
 dev
 .npmignore
