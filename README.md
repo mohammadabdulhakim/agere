@@ -1,4 +1,7 @@
-﻿# بسم الله الرحمن الرحيم
+<h1 align="center">
+بسم الله الرحمن الرحيم
+</h1>
+
 ## agere
 
 [![NPM version][npm-version-img]][npm-url]
